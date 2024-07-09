@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>video craetor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col text-white bg-gray-800">
+        <div class="grow flex flex-col-reverse sm:flex-row justify-between">
+            <div class="grow flex flex-col justify-between p-4">
+                <div></div>
+                <input type="file" id="images" style="display: none;" multiple>
+                <label class="grow cursor-pointer p-4 relative flex flex-wrap gap-2 items-center justify-center hover:bg-gray-700" id="filesPng" href="#" for="images">
+                    <div class="flex flex-col gap-4 items-center justify-center" id="filetext">
+                        <i class="fas fa-file-image text-5xl"></i>
+                        send file
+                    </div>
+                    <div class="absolute top-0 left-0 aspect-video w-full h-full flex flex-wrap gap-2 overflow-y-auto" id="fileimages"></div>
+                </label>
+                <div>
+                    <button class="p-4 bg-red-500 hover:bg-red-600" id="generateVideo">Generate Video</button>
+                    <a class="p-4 bg-gray-400 hover:bg-gray-500" id="downloadVideo" download="generated_video.webm" href="#" style="display: none;">Download Video</a>
+                </div>
+            </div>
+            <div class="aspect-video relative bg-gray-950">
+                <canvas class="absolute top-0 left-0 aspect-video w-full h-full" id="myCanvas" width="1920" height="1080"></canvas>
+            </div>
+        </div>
+        <div class="h-32 bg-gray-900">
+            
+        </div>
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
